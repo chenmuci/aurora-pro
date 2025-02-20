@@ -13,14 +13,14 @@ export default (mode: string) => {
   return defineConfig({
     server: {
       port: 5000,
+      host: "0.0.0.0",
       proxy: {
         '/api': {
           target: VITE_API_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, '')
         }
-      },
-      host: true
+      }
     },
     resolve: {
       alias: {
@@ -38,13 +38,30 @@ export default (mode: string) => {
           'pinia'
         ],
         dts: 'src/types/auto-imports.d.ts',
-        dirs: ['src/stores', 'src/hooks'],
+        dirs: ['src/stores', 'src/composables'],
       }),
       Components({
         dts: 'src/types/components.d.ts',
-        dirs: ['src/components']
+        dirs: ['src/components'],
+        deep: true
       }),
       Unocss()
-    ]
+    ],
+    build: {
+      // 清除console和debugger
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true
+        }
+      },
+      target: 'modules',
+      outDir: 'dist/', // 指定输出路径
+      assetsDir: 'assets', // 指定生成静态文件目录
+      assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为 base64 编码
+      chunkSizeWarningLimit: 500, // chunk 大小警告的限制
+      minify: 'terser', // 混淆器，terser构建后文件体积更小
+      emptyOutDir: true, //打包前先清空原有打包文件
+    }
   })
 }
