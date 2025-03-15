@@ -8,8 +8,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    DragVerify: typeof import('./../components/drag-verify/index.vue')['default']
+    Exception: typeof import('./../components/exception/index.vue')['default']
     IconSelect: typeof import('./../components/icon-select/index.vue')['default']
+    MyIcon: typeof import('./../components/my-icon/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectLang: typeof import('./../components/select-lang/index.vue')['default']
+    TokenProvider: typeof import('./../components/token-provider/index.vue')['default']
   }
 }

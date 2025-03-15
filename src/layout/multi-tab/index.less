@@ -1,0 +1,74 @@
+.multi-tab-wrap {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    user-select: none;
+    background: #fff;
+    width: calc(100% - 40px);
+    &-close {
+        margin-left: 8px;
+        font-size: 10px;
+        color: #666666;
+    }
+    /**  覆盖 ant design vue的 tabs 样式，变小一点 **/
+    :deep(.ant-tabs-nav) {
+        margin: 0;
+        padding: 0 0 2px 0;
+        max-height: 32px;
+    }
+    :deep(.ant-tabs-nav::before) {
+        border-bottom: 1px solid #ffffff;
+    }
+    :deep(.ant-tabs-small > .ant-tabs-nav .ant-tabs-tab) {
+        padding: 5px 20px 3px 20px;
+        border-radius: 5px;
+        margin: 0 0 0 5px !important;
+    }
+    :deep(.ant-tabs-tab-active) {
+        background-color: #eeeeee;
+        .multi-tab-wrap-close {
+            color: #1477ff;
+        }
+    }
+    :deep(.ant-tabs-nav .ant-tabs-tab:hover) {
+        background-color: #eeeeee;
+        .multi-tab-wrap-close {
+            color: #1477ff;
+        }
+    }
+    :deep(.ant-tabs-nav .ant-tabs-tab .anticon) {
+        margin-right: 0;
+    }
+}
+
+.multi-tab-operate {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+    padding-right: 10px;
+    cursor: pointer;
+    color: #606266;
+    &-icon {
+        width: 20px;
+        height: 20px;
+        transition: 1s;
+        transform-origin: 10px 20px;
+    }
+    &-icon:hover {
+        width: 20px;
+        height: 20px;
+        transform: rotate(360deg);
+    }
+}
+
+.multi-tab-operate:hover {
+    color: #1477ff;
+}

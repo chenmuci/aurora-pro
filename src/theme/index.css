@@ -1,3 +1,4 @@
+@import "reset.css";
 @import "scrollbar.css";
 @import "transition.css";
 
@@ -9,22 +10,24 @@
     outline: none !important;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
+html, body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    text-rendering: optimizeLegibility;
+    overflow: hidden;
+}
+
+#app, body, html {
     width: 100%;
     height: 100%;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
-    background-color: #f8f8f8;
-    font-size: 14px;
-    position: relative;
 }
 
 #app {
-    width: 100%;
-    height: 100%;
+    overflow-x: hidden;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
 }
 
 /**********************************  ant design spin **********************************/

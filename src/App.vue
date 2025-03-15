@@ -4,7 +4,9 @@
 <template>
     <a-config-provider :theme="theme" :locale="antd">
         <a-spin :spinning="spinning" tip="稍等片刻，拼命加载中...">
-            <RouterView />
+            <TokenProvider>
+                <RouterView />
+            </TokenProvider>
         </a-spin>
     </a-config-provider>
 </template>

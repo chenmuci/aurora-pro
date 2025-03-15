@@ -1,7 +1,7 @@
 /**
- * 四种布局: 左侧、顶部、混合
+ * 三种布局: 左侧、顶部、混合
  */
-export type LayoutType = 'side' | 'top' | 'fix'
+export type LayoutType = 'side' | 'top' | 'mix'
 
 /**
  * 主题： 亮色，暗色
@@ -25,6 +25,8 @@ export interface AppConfig {
     colorPrimary: string
     // 菜单隐藏/显示
     collapsed: boolean
+    // 菜单手风琴
+    accordion: boolean
     // 面包屑
     breadCrumb: boolean
     // 标签页

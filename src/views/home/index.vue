@@ -1,3 +1,7 @@
 <template>
-    home
+    <div>
+        <span>
+            home
+        </span>
+    </div>
 </template>

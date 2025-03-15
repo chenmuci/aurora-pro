@@ -1,0 +1,211 @@
+/* */
+.layout-header-wrap {
+    height: auto;
+    background: #fff;
+    padding: 0;
+    z-index: 21;
+    &-user {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid #f6f6f6;
+        &-left {
+            display: flex;
+            height: 40px;
+        }
+    }
+}
+
+.collapsed {
+    margin-left: 15px;
+}
+
+.breadcrumb {
+    margin-left: 15px;
+    line-height: 40px;
+}
+
+.space-item {
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+.space-item-btn {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    line-height: 40px;
+    padding: 0 12px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.space-item-user {
+    padding: 0 12px;
+}
+
+.space-item-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.space-item-user:hover {
+    background-color: var(--hover-color);
+}
+
+/* User Avatar */
+.avatar-wrap {
+    height: 40px;
+    line-height: 40px;
+    .avatar {
+        vertical-align: middle;
+    }
+    .name {
+        margin-left: 5px;
+        font-weight: 500;
+    }
+}
+
+.wrapper {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    .avatar-image {
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+/* Setting Drawer */
+h3 {
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.setting-block-checkbox {
+    display: flex;
+    min-height: 42px;
+    &-selectIcon{
+        position: absolute;
+        right: 6px;
+        bottom: 4px;
+        font-weight: 700;
+        font-size: 14px;
+        pointer-events: none
+    }
+    &-item{
+        position: relative;
+        width: 44px;
+        height: 36px;
+        margin-right: 16px;
+        overflow: hidden;
+        background-color: #f0f2f5;
+        border-radius: 4px;
+        box-shadow: 0 1px 2.5px 0 rgba(0,0,0,.18);
+        cursor: pointer;
+        &::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 33%;
+            height: 100%;
+            background-color: #fff;
+            content: "";
+        }
+        &::after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 25%;
+            background-color: #fff;
+            content: ""
+        }
+        &-dark{
+            background-color: rgba(0,21,41,.85);
+            &::before{
+                background-color: rgba(0,21,41,.65);
+                content: "";
+            }
+            &::after{
+                background-color: rgba(0,21,41,.85);
+            }
+        }
+        &-light{
+            &::before{
+                background-color: #fff;
+                content: "";
+            }
+            &::after{
+                background-color: #fff
+            }
+        }
+        &-top::before{
+            background-color: transparent;
+            content: ""
+        }
+        &-top::after{
+            background-color: #001529;
+        }
+        &-mix::before{
+            background-color: #fff;
+            content: ""
+        }
+        &-mix::after{
+            background-color: #001529;
+        }
+    }
+    &-theme-item{
+        background: rgb(42, 44, 44);
+        box-shadow: rgba(13, 13, 13, 0.18) 0 1px 2.5px 0;
+        &-light{
+            &::before,&::after{
+                background-color: rgb(36, 37, 37);
+            }
+        }
+        &-dark{
+            &::before,&::after{
+                background-color: rgba(15, 28, 41, 0.65);
+            }
+        }
+        &-side::before{
+            background-color: rgb(15, 28, 41);
+        }
+        &-side::after{
+            background-color: rgb(36, 37, 37);
+        }
+        &-mix::before{
+            background-color: rgb(36, 37, 37);
+        }
+
+    }
+}
+
+.setting-theme-color {
+    overflow: hidden;
+    &-block{
+        float: left;
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+        font-weight: 700;
+        display: flex;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        cursor: pointer
+    }
+}
+
+.ant-list{
+    &-item{
+        padding-inline: 0;
+        padding-block: 8px;
+    }
+}
