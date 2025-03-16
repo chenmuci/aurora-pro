@@ -47,7 +47,6 @@
     const onLogout = () => {
         message.success("退出成功")
         router.push("/login")
-        location.reload()
     }
 
     const toAccount = (id?: string) => {
